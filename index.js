@@ -501,6 +501,7 @@ DailyRotateFile.prototype._createStream = function () {
       // and thus can emit the `open` event.
       //
       self.once('flush', function () {
+        self.flush();
         self.opening = false;
         self.emit('open', fullname);
       });
